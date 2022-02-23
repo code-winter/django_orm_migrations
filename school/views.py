@@ -3,7 +3,7 @@ from django.shortcuts import render
 import json
 from .models import Student
 
-if not Student.teacher:
+if not Student.teacher.all():
     with open('school.json', 'r', encoding='utf8') as file:
         data = json.load(file)
         for student in data:
